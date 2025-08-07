@@ -20,6 +20,9 @@
     </properties>
 
     <dependencies>
+    <!--El mayor bug que tuvo el proyecto fue esta biblioteca-->
+    <!--Como usaba tomcat >11 no podia usar la biblioteca javax que era la que chatgpt me recomendaba usar-->
+    <!--Entonces como 3 horas no cargo la base de datos porque necesitaba usar jakarta :(-->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -38,6 +41,7 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+        <!--Este es el driver para usar postgres, sin este no jala jeje-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>

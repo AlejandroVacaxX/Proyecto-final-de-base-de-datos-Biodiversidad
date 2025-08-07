@@ -5,6 +5,24 @@
     color: wheat;
 }
 
+.audio-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.audiopajarito {
+    width: 200px; /* Ajusta el tamaño según necesites */
+    opacity: 0.8; /* Hacemos el reproductor un poco transparente */
+    transition: opacity 0.3s ease;
+}
+
+.audiopajarito:hover {
+    opacity: 1; /* Se hace más visible al pasar el mouse */
+}
+
+
 body {
     background-image: url('naturaleza-cdmx-chapu.jpg');
     width: 100vw;  
