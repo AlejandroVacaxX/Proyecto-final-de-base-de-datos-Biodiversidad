@@ -77,6 +77,9 @@ public class MiServlet extends HttpServlet {
         }
     }
     
+
+        
+    
     //toma la informacion y la pasa a la siguiente pagina los datos recopilados por la consulta sin
     //que el usuario lo note pues no cambia la url
     private void forwardToJSP(HttpServletRequest request, HttpServletResponse response)
