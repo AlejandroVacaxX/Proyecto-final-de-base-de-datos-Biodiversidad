@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(86, 84, 81);
+}
+
+
+
+body {
+    background-image: url('naturaleza-cdmx-chapu.jpg');
+    width: 100vw;  
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100vw;  
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);  
+    z-index: 0;
+}
+
+.main-container {
+    border: solid;
+    width: 500px;
+    height: 700px;
+    z-index: 1;
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.15),
+        rgba(255, 255, 255, 0.15)
+    );
+    border-radius: 12px;
+    backdrop-filter: blur(50px);  
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 5fr); /* 2 columnas */
+   padding-top: 20px;
+    gap: 20px;
+    place-items: center; /* Centra los elementos tanto horizontal como verticalmente */
+}
+
+.catagolo {
+    border: solid;
+    width: 90%; /* Ocupa todo el espacio disponible en la celda de la cuadrícula */
+    height: 90%; /* Ocupa todo el espacio disponible en la celda de la cuadrícula */
+    max-width: 500px; /* Limita el ancho máximo si lo deseas */
+    max-height: 100px; /* Limita la altura máxima si lo deseas */
+    z-index: 1;
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.15),
+        rgba(255, 255, 255, 0.15)
+    );
+    border-radius: 12px;
+    backdrop-filter: blur(50px);  
+    padding: 10px; /* Reduje el padding para mejor ajuste */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necesario para posicionar el botón correctamente */
+    margin-top: 10px;
+}
+
+.catagolo h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.search-btn {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px 0 50px 0;
+    background:none;
+    display: flex;
+    border: white;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;    
+    display: flex;
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.15),
+        rgba(255, 255, 255, 0.15)
+    );
+    text-decoration: none;
+}
+.search-btn::focus{
+    border: 2px solid blue;
+    background-color: lightyellow;
+
+}
+.audio-container{
+    background-color: red;
+    position: absolute;
+    
+}
+.audiopajarito{
+    background-color: aqua;
+
+}

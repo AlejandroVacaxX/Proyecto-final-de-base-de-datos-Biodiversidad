@@ -4,24 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <title>Biodiversidad CDMX</title>
 </head>
 
 </style>
 <body>
- <div class="audio-container">
-    <audio class="audiopajarito" autoplay controller>
-        <source src="bird-song-23221.mp3" type="audio/mp3">
-    </audio>
-</div>
+ 
     <main class="main-container">
         <header class="input-container">
             <form action="MiServlet" method="post">
                 <input class="consulta-input" type="text" name="consulta" 
                        placeholder="Ej: SELECT * FROM ecosistema'" required>
                 <button type="submit" class="search-btn">
+                <input type="hidden" name="formulario" value="sqlCrudo">
                     <span class="material-symbols-outlined">search</span>
                 </button>
             </form>

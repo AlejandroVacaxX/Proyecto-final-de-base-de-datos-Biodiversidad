@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Resultados</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <%--nunca pude hacer que el archivo style funcionara :( --%>
     <%--por eso pongo bien mugroso el codigo del css aqui jsjsjs :( --%>
     <%--Agradezco a  https://www.youtube.com/watch?v=krUdJ87uxXc, porque de ahi me robe el css para que quedara padrisimo la bd--%>
@@ -12,12 +12,7 @@
 
 </head>
 <body>
-//nunca pude hacer que se centrara bonito 
-<div class="audio-container">
-    <audio class="audiopajarito" autoplay controller>
-        <source src="bird-song-23221.mp3" type="audio/mp3">
-    </audio>
-</div>
+
     <div class="results-container">
         <%--esta madre maneja errores en consultas--%>
         <% if (request.getAttribute("error") != null) { %>
@@ -55,8 +50,11 @@
                 </div>
             <% } %>
         <% } %>
-        <%-- aqui mandamos a traer el boton para regresar bb--%>
-        <a href="index.jsp" class="back-btn">Nueva Consulta</a>
+        
+        <a href="index.html" class="back-btn">Regresar al menu</a>
+        <a href="index.html" class="back-btn">Realizar consulta de SQL crudo</a>
+        <a href="index.html" class="back-btn">Realizar consulta por Geografia</a>
+        <a href="index.html" class="back-btn">Realizar consulta por Servicio/a>
     </div>
 </body>
 </html>
