@@ -52,9 +52,9 @@
         <% } %>
         
         <a href="index.html" class="back-btn">Regresar al menu</a>
-        <a href="index.html" class="back-btn">Realizar consulta de SQL crudo</a>
-        <a href="index.html" class="back-btn">Realizar consulta por Geografia</a>
-        <a href="index.html" class="back-btn">Realizar consulta por Servicio/a>
+        <a href="SQLcrudo.jsp" class="back-btn">Realizar consulta de SQL crudo</a>
+        <a href="catGeo.jsp" class="back-btn">Realizar consulta por Geografia</a>
+        <a href="catServicios.jsp" class="back-btn">Realizar consulta por Servicio/a>
     </div>
 </body>
 </html>

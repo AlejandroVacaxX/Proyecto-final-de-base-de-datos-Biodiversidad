@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(86, 84, 81);
+    color: rgb(255, 255, 255);
 }
 
 
 
 body {
-    background-image: url('naturaleza-cdmx-chapu.jpg');
+    background-image: url("naturaleza-cdmx-chapu.jpg");
     width: 100vw;  
     height: 100vh;
     background-size: cover;
@@ -32,12 +32,12 @@ body::before {
 .main-container {
     border: solid;
     width: 500px;
-    height: 700px;
+    height: 800px;
     z-index: 1;
     background: linear-gradient(
         to top, 
-        rgba(0, 0, 0, 0.15),
-        rgba(255, 255, 255, 0.15)
+        rgb(154, 152, 152),
+        rgba(108, 192, 75, 0.803)
     );
     border-radius: 12px;
     backdrop-filter: blur(50px);  
@@ -58,8 +58,8 @@ body::before {
     z-index: 1;
     background: linear-gradient(
         to top, 
-        rgba(0, 0, 0, 0.15),
-        rgba(255, 255, 255, 0.15)
+        rgba(95, 128, 112, 0.825),
+        rgba(139, 209, 17, 0.881)
     );
     border-radius: 12px;
     backdrop-filter: blur(50px);  

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(85, 82, 82);
+    color: rgb(0, 0, 0);
 }
 
 
@@ -72,6 +72,7 @@ body::before {
     display: flex;
     border: none;
     cursor: pointer;
+    background-color: aliceblue;
 }
 
 
@@ -100,7 +101,7 @@ body::before {
 .data-table th, .data-table td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 252, 252, 0.901);
 }
 
 .data-table th {

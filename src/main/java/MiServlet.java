@@ -15,6 +15,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/MiServlet")
 public class MiServlet extends HttpServlet {
 
+  
+
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/indicedebiodiversidadurbanadelaciudaddemexico";
     private static final String USER = "bakaa";
     private static final String PASS = "";
@@ -112,61 +114,6 @@ public class MiServlet extends HttpServlet {
 
             case "consulta3":
                 return "select a.nombre AS alcaldia, n.nombre AS nombresdeareasprotegidas, area.superficie, area.porcentaje AS areanatural from alcaldia a join nombresdeareasprotegidas n ON a.id_alcaldia = n.id_alcaldia join areanatural area ON area.fk_alcaldia = a.id_alcaldia;";
-            case "consulta4":
-                return "SELECT \n" + //
-                                        "    a.nombre AS alcaldia,\n" + //
-                                        "    e.categoria_iucn AS ecosistema,\n" + //
-                                        "    COUNT(p.id_planta) AS total_plantas,\n" + //
-                                        "    COUNT(av.id_ave) AS total_aves,\n" + //
-                                        "    COUNT(ar.id_artropodo) AS total_artropodos\n" + //
-                                        "FROM \n" + //
-                                        "    alcaldia a\n" + //
-                                        "LEFT JOIN \n" + //
-                                        "    planta p ON a.id_alcaldia = p.id_alcaldia\n" + //
-                                        "LEFT JOIN \n" + //
-                                        "    ave av ON a.id_alcaldia = av.id_alcaldia\n" + //
-                                        "LEFT JOIN \n" + //
-                                        "    artropodo ar ON a.id_alcaldia = ar.id_alcaldia\n" + //
-                                        "LEFT JOIN \n" + //
-                                        "    ecosistema e ON (p.id_ecosistema = e.id_ecosistema OR \n" + //
-                                        "                    av.id_ecosistema = e.id_ecosistema OR \n" + //
-                                        "                    ar.id_ecosistema = e.id_ecosistema)\n" + //
-                                        "WHERE \n" + //
-                                        "    a.nombre = '" + parametroAdicional +" 'GROUP BY \n    a.nombre, e.categoria_iucn;";
-            case "consulta5":
-                return "SELECT \n" + //
-                                        "    a.nombre AS alcaldia,\n" + //
-                                        "    nap.nombre AS area_protegida,\n" + //
-                                        "    nc.categoria AS categoria_proteccion,\n" + //
-                                        "    an.superficie AS superficie_area_natural\n" + //
-                                        "FROM \n" + //
-                                        "    alcaldia a\n" + //
-                                        "JOIN \n" + //
-                                        "    nombresdeareasprotegidas nap ON a.id_alcaldia = nap.id_alcaldia\n" + //
-                                        "JOIN \n" + //
-                                        "    nombrecategoriasdeareasprotegidas nc ON nap.id_catego = nc.id_categoareaprote\n" + //
-                                        "LEFT JOIN \n" + //
-                                        "    areanatural an ON a.id_alcaldia = an.fk_alcaldia\n" + //
-                                        "WHERE \n" + //
-                                        "    a.nombre = '" + parametroAdicional +" ' ;";
-            case "consulta6":
-                    return "SELECT \n" + //
-                                                "    rp.id_presupuesto,\n" + //
-                                                "    rp.presupuestototal,\n" + //
-                                                "    rp.porcentajedelpresupuestodelaciudad,\n" + //
-                                                "    gb.tipo_gasto,\n" + //
-                                                "    gb.total_subcategoria,\n" + //
-                                                "    ci.nombre AS ciudad\n" + //
-                                                "FROM \n" + //
-                                                "    registropresupuesto rp\n" + //
-                                                "JOIN \n" + //
-                                                "    gastobiodiversidad gb ON rp.id_presupuesto = gb.id_registro_presupuesto\n" + //
-                                                "JOIN \n" + //
-                                                "    ciudad ci ON rp.id_ciudad = ci.id\n" + //
-                                                "LEFT JOIN \n" + //
-                                                "    categoriabiofin cb ON gb.id_categoria_biofin = cb.id_categoria\n" + //
-                                                "WHERE \n" + //
-                                                "    ci.nombre = '" + parametroAdicional +" ';";
                                         default:
                 throw new IllegalArgumentException("Tipo de consulta no válido");
         }

@@ -1,0 +1,134 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #7cd87f;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #52bc7e;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #16a085;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+/* Secciones de formularios */
+.form-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.catalogo {
+    background: #f9f9f9;
+    border-left: 4px solid #27ae60;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Formularios */
+.input-datos {
+    margin-top: 15px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-row > * {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    grid-column: 2;
+    justify-self: start;
+}
+
+input[type="submit"]:hover {
+    background-color: #2ecc71;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+    
+    input[type="submit"] {
+        grid-column: 1;
+        width: 100%;
+    }
+}
+
+.back-btn{
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    grid-column: 2;
+    justify-self: start;
+
+}

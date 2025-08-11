@@ -16,11 +16,8 @@
             <form id="queryForm" action="MiServlet" method="POST">
                 <select name="tipoConsulta">
                     <option value="consulta1">Áreas naturales por alcaldía</option>
-                    <option value="consulta2">Especies invasoras por ecosistema</option>
+                    <option value="consulta2">Especies invasoras por alcaldia</option>
                     <option value="consulta3">Ecosistema por alcaldia</option>
-                    <option value="consulta4">Areas naturales en la ciudad de mexico</option>
-                    <option value="consulta5">Especie por alcaldia y ecosistema</option>
-                    <option value="consulta6">Areas protegidas por alcaldia</option>
                 </select>
 
                 <select name="parametroadicional">

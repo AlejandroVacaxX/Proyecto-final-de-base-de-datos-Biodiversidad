@@ -2,6 +2,7 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="es-MX"> 
+<link rel="stylesheet" href="../css/styleCuestionario.css">
 <head>
     <title>Consulta de Biodiversidad</title>
     <meta charset="UTF-8">
@@ -60,39 +61,48 @@
     
     <h1>Resultados para <%= Tipo %> en ecosistema <%= Ecosistema %></h1>
     
-    <%
-            rs = stmt.executeQuery(Crea);
-            
-            // Mostrar resultados en tabla
-            out.println("<table>");
-            out.println("<tr>");
-            out.println("<th>Nombre</th>");
-            out.println("<th>Nombre Científico</th>");
-            out.println("<th>Exótica</th>");
-            out.println("<th>Invasora</th>");
-            out.println("<th>Imagen</th>");
-            out.println("<th>Categoría IUCN</th>");
-            out.println("</tr>");
-            
-            while(rs.next()) {
-                out.println("<tr>");
-                out.println("<td>" + rs.getString("nombre") + "</td>");
-                out.println("<td>" + rs.getString("nombre_cientifico") + "</td>");
-                out.println("<td>" + rs.getString("exotica") + "</td>");
-                out.println("<td>" + rs.getString("invasora") + "</td>");
-                out.println("<td><img src='" + rs.getString("/Users/bakaa/Desktop/webapp/src/main/webapp/imagenes/plantas") + "' alt='Imagen de un lirio " + rs.getString("foto_url") + "'></td>");
-                out.println("<td>" + rs.getString("categoria_iucn") + "</td>");
-                out.println("</tr>");
-            }
-            
-            out.println("</table>");
-            
-        } catch(Exception e) {
-            out.println("<h2 style='color:red'>Error: " + e.getMessage() + "</h2>");
-        } finally {
-            if(con != null) con.close();
-        }
-    %>
+  <%
+    rs = stmt.executeQuery(Crea);
+    
+    // Mostrar resultados en tabla
+    out.println("<table>");
+    out.println("<tr>");
+    out.println("<th>Nombre</th>");
+    out.println("<th>Nombre Científico</th>");
+    out.println("<th>Exótica</th>");
+    out.println("<th>Invasora</th>");
+    out.println("<th>Imagen</th>");
+    out.println("<th>Categoría IUCN</th>");
+    out.println("</tr>");
+    
+    while(rs.next()) {
+        // Generar nombre de archivo automático basado en nombre científico
+        String nombreArchivo = rs.getString("nombre").toLowerCase()
+                                      .replace(" ", "_")
+                                      .replace("á", "a").replace("é", "e").replace("í", "i")
+                                      .replace("ó", "o").replace("ú", "u") + ".jpg";
+        
+        // Ruta relativa a la carpeta de imágenes
+        String rutaImagen = request.getContextPath() + "/imagenes/" + nombreArchivo;
+        
+        out.println("<tr>");
+        out.println("<td>" + rs.getString("nombre") + "</td>");
+        out.println("<td>" + rs.getString("nombre_cientifico") + "</td>");
+        out.println("<td>" + rs.getString("exotica") + "</td>");
+        out.println("<td>" + rs.getString("invasora") + "</td>");
+        out.println("<td><img src='" + rutaImagen + "' alt='Imagen de " + rs.getString("nombre") + "' style='max-width:100px; height:auto; border:1px solid #ddd;'></td>");
+        out.println("<td>" + rs.getString("categoria_iucn") + "</td>");
+        out.println("</tr>");
+    }
+    
+    out.println("</table>");
+    
+} catch(Exception e) {
+    out.println("<h2 style='color:red'>Error: " + e.getMessage() + "</h2>");
+} finally {
+    if(con != null) con.close();
+}
+%>
     
     <br><br>
     <a href="MuestraAnimales.jsp" class="back-btn">Hacer otra consulta</a>

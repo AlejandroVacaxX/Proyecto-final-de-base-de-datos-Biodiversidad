@@ -2,7 +2,7 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="es-MX" > 
-
+<link rel="stylesheet" href="../css/styleCuestionario.css">
         <head>
                 <title>Modificando Base de Datos</title>
                 <meta charset="UTF-8">
@@ -28,8 +28,7 @@
                         String SubcategoA = "";
                         String Crea = "";
                 %>
-		<span> Capturando información del formulario</span>
-                <br> <br> <br> 
+		
                 <%
                         /* recuperando datos del formulario */
                         request.setCharacterEncoding("UTF-8");
@@ -46,20 +45,14 @@
                         Crea = " UPDATE gastobiodiversidad SET tipo_gasto = '"+Tipo+"', subcategoria = '"+Subcatego+"', total_subcategoria = '"+Presupuesto+"' where subcategoria = '"+SubcategoA+"' ;";
                         
                 %>     
-                <span> Cuando tengo errores puedo mandar a imprimir la consulta </span>  <br><br>
-                <span> Cuando ya está correcta quito la impresión y yap </span> <br><br>  <span> Es muy útil porque es>
-                <%= Crea %>
-                <br> <br><br><br><br>
-                <span> Debemos Recordar Restringir el tipo de dato a escribir desde el lado  cliente y lado servidor</>
-                <br> <br>
+                <h1>Datos actualizados exitosamente</h1>
                 <%
                         //generando actualización en la Base de datos
                         stmt.executeUpdate(Crea);
                         con.close(); //Cerrando conexión con el servidor de Base de Datos
                 %> 
                 <br><br><br><br><br>
-                <span >Datos actualizados: </span> <br><br>
-                <span> <%= Presupuesto %> </span>
-                <a href="../modificacion.jsp" class="back-btn">Regresar al menu</a>
+                <a href="../modificacion.jsp" class="back-btn">Realiza una nueva consulta</a>
+                <a href="../index.html" class="back-btn">Regresar al menu</a>
 	</body>
 </html>
